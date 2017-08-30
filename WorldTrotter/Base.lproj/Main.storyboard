@@ -99,21 +99,17 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="497" y="278"/>
+            <point key="canvasLocation" x="364" y="403"/>
         </scene>
         <!--Map-->
         <scene sceneID="Vjn-Qp-5vh">
             <objects>
-                <viewController id="9U4-md-nhG" sceneMemberID="viewController">
-                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="Yf0-Lu-MaX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </mapView>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HAJ-yR-4tw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="9U4-md-nhG" customClass="mapViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" selectedImage="MapIcon" id="H62-6t-Zqw"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HAJ-yR-4tw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1207" y="-146"/>
+            <point key="canvasLocation" x="364" y="-239"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lpo-qg-ARA">
@@ -121,6 +117,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Qdr-Gx-Zsv" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="dZu-jP-fyp">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
