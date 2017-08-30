@@ -1,6 +1,12 @@
 
+/* Class = "UITabBarItem"; title = "Convert"; ObjectID = "8Hp-NE-Rxy"; */
+"8Hp-NE-Rxy.title" = "Convertir";
+
 /* Class = "UILabel"; text = "100"; ObjectID = "CrN-YL-nT0"; */
 "CrN-YL-nT0.text" = "100";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "H62-6t-Zqw"; */
+"H62-6t-Zqw.title" = "Mapa";
 
 /* Class = "UILabel"; text = "degrees Fahrenheit"; ObjectID = "g71-yN-vNM"; */
 "g71-yN-vNM.text" = "grados Fahrenheit";
