@@ -14,8 +14,10 @@
 		2F5071201F55CBBB006C045F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F50711E1F55CBBB006C045F /* LaunchScreen.storyboard */; };
 		2F50712B1F55CBBB006C045F /* WorldTrotterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F50712A1F55CBBB006C045F /* WorldTrotterTests.swift */; };
 		2F5071361F55CBBB006C045F /* WorldTrotterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5071351F55CBBB006C045F /* WorldTrotterUITests.swift */; };
+		2FADC48B1F5B2497001E72DB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FADC48A1F5B2497001E72DB /* Default-568h@2x.png */; };
 		2FB8B9351F57686E00BE62AC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB8B9341F57686E00BE62AC /* MapViewController.swift */; };
 		2FC9B4D91F55FF3D009F3F19 /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC9B4D81F55FF3D009F3F19 /* ConversionViewController.swift */; };
+		2FE99A1D1F58FF2400227C95 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE99A1C1F58FF2400227C95 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +53,10 @@
 		2F5071311F55CBBB006C045F /* WorldTrotterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldTrotterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F5071351F55CBBB006C045F /* WorldTrotterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTrotterUITests.swift; sourceTree = "<group>"; };
 		2F5071371F55CBBB006C045F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FADC48A1F5B2497001E72DB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2FB8B9341F57686E00BE62AC /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2FC9B4D81F55FF3D009F3F19 /* ConversionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
+		2FE99A1C1F58FF2400227C95 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 		2F5071091F55CBBB006C045F = {
 			isa = PBXGroup;
 			children = (
+				2FADC48A1F5B2497001E72DB /* Default-568h@2x.png */,
 				2F5071141F55CBBB006C045F /* WorldTrotter */,
 				2F5071291F55CBBB006C045F /* WorldTrotterTests */,
 				2F5071341F55CBBB006C045F /* WorldTrotterUITests */,
@@ -116,6 +121,7 @@
 				2FC9B4D81F55FF3D009F3F19 /* ConversionViewController.swift */,
 				2F5071151F55CBBB006C045F /* AppDelegate.swift */,
 				2F5071191F55CBBB006C045F /* Main.storyboard */,
+				2FE99A1C1F58FF2400227C95 /* WebViewController.swift */,
 				2FB8B9341F57686E00BE62AC /* MapViewController.swift */,
 				2F50711C1F55CBBB006C045F /* Assets.xcassets */,
 				2F50711E1F55CBBB006C045F /* LaunchScreen.storyboard */,
@@ -252,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F5071201F55CBBB006C045F /* LaunchScreen.storyboard in Resources */,
+				2FADC48B1F5B2497001E72DB /* Default-568h@2x.png in Resources */,
 				2F50711D1F55CBBB006C045F /* Assets.xcassets in Resources */,
 				2F50711B1F55CBBB006C045F /* Main.storyboard in Resources */,
 			);
@@ -281,6 +288,7 @@
 				2FC9B4D91F55FF3D009F3F19 /* ConversionViewController.swift in Sources */,
 				2FB8B9351F57686E00BE62AC /* MapViewController.swift in Sources */,
 				2F5071161F55CBBB006C045F /* AppDelegate.swift in Sources */,
+				2FE99A1D1F58FF2400227C95 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
