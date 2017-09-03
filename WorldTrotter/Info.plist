@@ -24,6 +24,10 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>&quot;We want to see where you are&quot;</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>&quot;We always want to see where you are&quot;</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -43,10 +47,8 @@
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-    		<key>NSAllowsArbitraryLoadsInWebContent</key>
-			<true/>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
 	</dict>
-
-
 </dict>
 </plist>

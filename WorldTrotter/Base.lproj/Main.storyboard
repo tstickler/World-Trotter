@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Web" image="icons8-Website Filled-50" selectedImage="icons8-Website Filled-50" id="4Dx-4m-2eS"/>
+                    <tabBarItem key="tabBarItem" title="Web" image="WebIcon" selectedImage="WebIcon" id="4Dx-4m-2eS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JBt-gc-MzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,6 +108,7 @@
                     <tabBarItem key="tabBarItem" title="Convert" image="ConvertIcon" selectedImage="ConvertIcon" id="8Hp-NE-Rxy"/>
                     <connections>
                         <outlet property="celsiusLabel" destination="CrN-YL-nT0" id="bb0-ce-Xow"/>
+                        <outlet property="isReallyLabel" destination="ydS-bE-1UG" id="JJy-ab-aJo"/>
                         <outlet property="textField" destination="s5g-MJ-4pS" id="6Me-YR-vCS"/>
                     </connections>
                 </viewController>
@@ -154,6 +155,6 @@
     <resources>
         <image name="ConvertIcon" width="48" height="32"/>
         <image name="MapIcon" width="48" height="32"/>
-        <image name="icons8-Website Filled-50" width="25" height="25"/>
+        <image name="WebIcon" width="25" height="25"/>
     </resources>
 </document>

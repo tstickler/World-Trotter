@@ -33,7 +33,7 @@ class WebViewController: UIViewController, WKUIDelegate {
         super.viewDidLoad()
         
         // Sets a URL to be loaded when the webpage opens
-        let myURL = URL(string: "http://www.jokersupdates.com")
+        let myURL = URL(string: "https://www.google.com")
         
         /***********************************************************************************
         * To allow the web view to access non https websites, add this to apps info.plist: *

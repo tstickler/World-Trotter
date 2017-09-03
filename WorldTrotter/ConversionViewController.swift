@@ -13,6 +13,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     // Variable that allows us to reference our text field and label
     @IBOutlet var celsiusLabel: UILabel!
     @IBOutlet var textField: UITextField!
+    @IBOutlet weak var isReallyLabel: UILabel!
     
     // Implements a number formatter, preventing the display of more
     // than two digits after the decimal point
@@ -75,6 +76,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     // Delegate that doesn't allow the user to enter multiple decimals
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
+        // Determines the current user locale
         let currentLocale = Locale.current
         let decimalSeperator = currentLocale.decimalSeparator ?? "."
         
@@ -86,7 +88,12 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
             return false
         }
         else {
-            return true
+            if CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: string)) || (string.range(of: ".") != nil) {
+                return true
+            }
+            else {
+                return false
+            }
         }
     }
     
@@ -97,5 +104,29 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         print("ConversionViewController loaded its view")
         
         updateCelsiusLabel()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // Var to hold single point in time
+        let date = Date()
+        
+        // Used to make sense of date variable
+        let cal = Calendar.current
+        
+        // Sets hour according to the calendar and date
+        let hour = cal.component(.hour, from: date)
+        
+        print(hour)
+        
+        // Checks if we are between 8pm and 5am
+        if hour >= 20 || hour < 5 {
+            // Sets the background to black
+            view.backgroundColor = UIColor.black
+            
+            // Changes dark labels to white so they can be read
+            isReallyLabel.textColor = UIColor.white
+            textField.attributedPlaceholder = NSAttributedString(string: "Value",
+                                                                 attributes: [NSForegroundColorAttributeName: UIColor.white])
+        }
     }
 }

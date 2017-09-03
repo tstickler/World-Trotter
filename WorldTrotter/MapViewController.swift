@@ -8,10 +8,14 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class mapViewController: UIViewController {
+class mapViewController: UIViewController, CLLocationManagerDelegate {
     
     var mapView: MKMapView!
+    var locationManager: CLLocationManager!
+    var userLocationBtn: UIButton!
+    var updatingLocation: Bool = false
     
     override func loadView() {
         // Create a map view
@@ -44,10 +48,38 @@ class mapViewController: UIViewController {
         // Updates the map type when the one of the segments is tapped
         segmentedControl.addTarget(self, action: #selector(mapViewController.mapTypeChanged(_:)), for: .valueChanged)
         
+        // Setting up our button that allows us to track user location
+        userLocationBtn = UIButton()
+        userLocationBtn.imageEdgeInsets = UIEdgeInsetsMake(40, 40, 40, 40)
+        userLocationBtn.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        userLocationBtn.layer.cornerRadius = 25
+        userLocationBtn.layer.borderWidth = 1
+        userLocationBtn.imageView?.contentMode = .scaleAspectFit
+        userLocationBtn.translatesAutoresizingMaskIntoConstraints = false
+        userLocationBtn.setImage(UIImage(named: "bluemarker.png"), for: UIControlState.normal)
+        userLocationBtn.addTarget(self, action: #selector(locationBtnTapped), for: .touchUpInside)
+        view.addSubview(userLocationBtn)
+        
+        // Setting up our button constraints
+        let btnTopConstraint = userLocationBtn.topAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -60)
+        //let btnLeadingConstraint = userLocationBtn.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 275)
+        let btnTrailingConstraint = userLocationBtn.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
+        
+        btnTopConstraint.isActive = true
+        // btnLeadingConstraint.isActive = true
+        btnTrailingConstraint.isActive = true
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Initalizes our location manager to find the user
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
         
         print("MapViewController loaded its view")
     }
@@ -64,5 +96,42 @@ class mapViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    // Button to begin tracking or stop tracking user location
+    func locationBtnTapped() {
+        if updatingLocation == false {
+            locationManager.startUpdatingLocation()
+            mapView.showsUserLocation = true
+            updatingLocation = true
+            print("began tracking user location")
+        }
+        else {
+            locationManager.stopUpdatingLocation()
+            mapView.showsUserLocation = false
+            print("stopped tracking user location")
+            updatingLocation = false
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // Gets the users current location
+        let userLocation: CLLocation = locations[0]
+        
+        // Pulls out latitude and longitude from current location and creates a coordinate
+        let lat = userLocation.coordinate.latitude
+        let lon = userLocation.coordinate.longitude
+        let location = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+        
+        // Amount of degrees to display on the map
+        let latDelta: CLLocationDegrees = 0.05
+        let lonDelta: CLLocationDegrees = 0.05
+        let span = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lonDelta)
+        
+        // Sets the region according to our coordinates and span
+        let region = MKCoordinateRegion(center: location, span: span)
+        mapView.setRegion(region, animated: true)
+        
+        print("\(lat), \(lon)")
     }
 }
