@@ -116,7 +116,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         // Sets hour according to the calendar and date
         let hour = cal.component(.hour, from: date)
         
-        print(hour)
+        print("Current hour is: \(hour)")
         
         // Checks if we are between 8pm and 5am
         if hour >= 20 || hour < 5 {

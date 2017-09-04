@@ -16,6 +16,7 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager: CLLocationManager!
     var userLocationBtn: UIButton!
     var updatingLocation: Bool = false
+    var shouldSetRegion: Bool = true
     
     override func loadView() {
         // Create a map view
@@ -54,6 +55,7 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
         userLocationBtn.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         userLocationBtn.layer.cornerRadius = 25
         userLocationBtn.layer.borderWidth = 1
+        userLocationBtn.layer.borderColor = UIColor.blue.cgColor
         userLocationBtn.imageView?.contentMode = .scaleAspectFit
         userLocationBtn.translatesAutoresizingMaskIntoConstraints = false
         userLocationBtn.setImage(UIImage(named: "bluemarker.png"), for: UIControlState.normal)
@@ -104,13 +106,14 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
             mapView.showsUserLocation = true
             updatingLocation = true
-            print("began tracking user location")
+            print("Began tracking user location")
         }
         else {
             locationManager.stopUpdatingLocation()
             mapView.showsUserLocation = false
-            print("stopped tracking user location")
+            print("Stopped tracking user location")
             updatingLocation = false
+            shouldSetRegion = true
         }
     }
     
@@ -124,13 +127,16 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
         let location = CLLocationCoordinate2D(latitude: lat, longitude: lon)
         
         // Amount of degrees to display on the map
-        let latDelta: CLLocationDegrees = 0.05
-        let lonDelta: CLLocationDegrees = 0.05
+        let latDelta: CLLocationDegrees = 0.015
+        let lonDelta: CLLocationDegrees = 0.015
         let span = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lonDelta)
         
         // Sets the region according to our coordinates and span
-        let region = MKCoordinateRegion(center: location, span: span)
-        mapView.setRegion(region, animated: true)
+        if shouldSetRegion == true {
+            let region = MKCoordinateRegion(center: location, span: span)
+            mapView.setRegion(region, animated: true)
+            shouldSetRegion = false
+        }
         
         print("\(lat), \(lon)")
     }
