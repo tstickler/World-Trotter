@@ -122,11 +122,11 @@
 		2F5071141F55CBBB006C045F /* WorldTrotter */ = {
 			isa = PBXGroup;
 			children = (
-				2FC9B4D81F55FF3D009F3F19 /* ConversionViewController.swift */,
 				2F5071151F55CBBB006C045F /* AppDelegate.swift */,
 				2F5071191F55CBBB006C045F /* Main.storyboard */,
-				2FE99A1C1F58FF2400227C95 /* WebViewController.swift */,
+				2FC9B4D81F55FF3D009F3F19 /* ConversionViewController.swift */,
 				2FB8B9341F57686E00BE62AC /* MapViewController.swift */,
+				2FE99A1C1F58FF2400227C95 /* WebViewController.swift */,
 				2F50711C1F55CBBB006C045F /* Assets.xcassets */,
 				2F50711E1F55CBBB006C045F /* LaunchScreen.storyboard */,
 				2F5071211F55CBBB006C045F /* Info.plist */,
